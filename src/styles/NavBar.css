@@ -1,0 +1,13 @@
+.navbar{
+  border-bottom: solid;
+}
+
+.navbar-logo{
+  width: 300px;
+}
+
+.navbar-links-item{
+  list-style: none;
+  display: inline-block;
+  padding:10px;
+}
