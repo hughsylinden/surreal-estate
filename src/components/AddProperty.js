@@ -25,6 +25,7 @@ const AddProperty = () => {
               name="title"
               value={fields.title}
               onChange={handleFieldChange}
+              placeholder="John Doe"
             />
           </label>
           <label htmlFor="bedrooms">
@@ -34,6 +35,7 @@ const AddProperty = () => {
               name="bedrooms"
               value={fields.bedrooms}
               onChange={handleFieldChange}
+              placeholder="1-10"
             />
           </label>
           <label htmlFor="bathrooms">
@@ -43,6 +45,7 @@ const AddProperty = () => {
               name="bathrooms"
               value={fields.bathrooms}
               onChange={handleFieldChange}
+              placeholder="1-10"
             />
           </label>
           <label htmlFor="price">
@@ -52,6 +55,7 @@ const AddProperty = () => {
               name="price"
               value={fields.price}
               onChange={handleFieldChange}
+              placeholder="0-2000000£"
             />
           </label>
           <label htmlFor="email">
@@ -61,6 +65,7 @@ const AddProperty = () => {
               name="email"
               value={fields.email}
               onChange={handleFieldChange}
+              placeholder="johndoe@email.com"
             />
           </label>
           <label htmlFor="city">
