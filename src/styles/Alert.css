@@ -1,0 +1,11 @@
+.success-message{
+  border: solid 2px green;
+  background-color: #deffdf;
+  margin:5px;
+}
+
+.failure-message{
+  border: solid 2px red;
+  background-color: #ffdede;
+  margin:5px;
+}

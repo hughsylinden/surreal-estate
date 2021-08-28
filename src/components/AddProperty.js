@@ -1,13 +1,24 @@
 import "../styles/AddProperty.css";
+import "../styles/Alert.css";
 import React, { useState } from "react";
+import getProperties from "../requests/getProperties";
+import Alert from "./Alert";
 
 const AddProperty = () => {
-  const initialState = { fields: { title: "", city: "Manchester" } };
+  const initialState = {
+    fields: { title: "", city: "Manchester" },
+    alert: {
+      message: "",
+      success: false,
+    },
+    show: false,
+  };
   const [fields, setFields] = useState(initialState.fields);
+  const [alert, setAlert] = useState(initialState.alert);
 
   const handleAddProperty = (e) => {
     e.preventDefault();
-    console.log(fields);
+    getProperties(fields, setAlert);
   };
 
   const handleFieldChange = (e) => {
@@ -16,6 +27,7 @@ const AddProperty = () => {
 
   return (
     <div className="AddProperty" onSubmit={handleAddProperty}>
+      <Alert success={alert.success} message={alert.message} />
       <form>
         <div className="addproperty__div">
           <label htmlFor="title">
