@@ -23,4 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 
 .eslintcache
-./surreal-estate-api
+/surreal-estate-api

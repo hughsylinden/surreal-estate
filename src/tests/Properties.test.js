@@ -1,9 +1,9 @@
 import { render, screen } from "@testing-library/react";
 import React from "react";
-import App from "../components/App";
+import Properties from "../components/Properties";
 
 test("renders learn react link", () => {
-  render(<App />);
-  const linkElement = screen.getByText(/Surreal Estate/i);
+  render(<Properties />);
+  const linkElement = screen.getByText("title");
   expect(linkElement).toBeInTheDocument();
 });

@@ -11,7 +11,7 @@ const getProperties = async (fields, setAlert) => {
     type: fields.type,
   };
   await axios
-    .post(`http://localhost:4000/api/v1/ProperyListing/`, obj)
+    .post(`http://localhost:4000/api/v1/PropertyListing/`, obj)
     .then(() => setAlert({ success: true, message: "success" }))
     .catch(() => {
       setAlert({ success: false, message: "error" });

@@ -1,0 +1,23 @@
+.property{
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  border: solid 1px black;
+}
+.property-item{
+  display: flex;
+  margin:5px;
+  align-items: center;
+}
+.image{
+  height: 20px;
+}
+.pound{
+  height: 15px;
+}
+.type{
+  height: 15px;
+}
+.email{
+  height: 15px;
+}

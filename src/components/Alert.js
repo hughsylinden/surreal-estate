@@ -9,7 +9,7 @@ const Alert = ({ success, message }) => {
   } else {
     className = "failure-message";
   }
-  return <div className={className}>{message}</div>;
+  return message && <div className={className}>{message}</div>;
 };
 
 Alert.propTypes = {
