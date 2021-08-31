@@ -1,10 +1,13 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import SideBar from "./SideBar";
 import showProperties from "../requests/showProperties";
 import deleteProperties from "../requests/deleteProperties";
 import Property from "./Property";
 import "../styles/Properties.css";
 import "../styles/Property.css";
+import searchProperties from "../requests/searchProperties";
 
 const Properties = () => {
   const initialState = {
@@ -18,6 +21,11 @@ const Properties = () => {
     showProperties(setProperties, setDisplay);
   }, []);
 
+  const { search } = useLocation();
+  useEffect(() => {
+    searchProperties(search, setDisplay);
+  }, [search]);
+
   const handleSearchInput = (e) => {
     const arr = properties.filter((property) =>
       property.city.toLowerCase().includes(e.target.value.toLowerCase())
@@ -29,18 +37,21 @@ const Properties = () => {
   return (
     <div>
       <h1>Properties</h1>
+      <SideBar properties={properties} />
       <div className="properties-search">
         <input onChange={handleSearchInput} />
       </div>
-      <div className="properties">
-        {display.map((property) => {
-          return (
-            <div>
-              <Property property={property} />
-            </div>
-          );
-        })}
-      </div>
+      {properties.length > 0 && (
+        <div className="properties">
+          {display.map((property) => {
+            return (
+              <div>
+                <Property property={property} />
+              </div>
+            );
+          })}
+        </div>
+      )}
       <button type="submit" onClick={deleteProperties}>
         delete all
       </button>
