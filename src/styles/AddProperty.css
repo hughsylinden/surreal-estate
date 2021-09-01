@@ -2,7 +2,7 @@
   background-color: white;
 }
 
-label{
+.addproperty__label{
   display:flex;
   justify-content: space-between;
   margin:10px;

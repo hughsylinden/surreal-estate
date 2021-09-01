@@ -30,7 +30,7 @@ const AddProperty = () => {
       <Alert success={alert.success} message={alert.message} />
       <form>
         <div className="addproperty__div">
-          <label htmlFor="title">
+          <label className="addproperty__label" htmlFor="title">
             title:
             <input
               id="title"
@@ -40,7 +40,7 @@ const AddProperty = () => {
               placeholder="John Doe"
             />
           </label>
-          <label htmlFor="bedrooms">
+          <label className="addproperty__label" htmlFor="bedrooms">
             bedrooms:
             <input
               id="bedrooms"
@@ -50,7 +50,7 @@ const AddProperty = () => {
               placeholder="1-10"
             />
           </label>
-          <label htmlFor="bathrooms">
+          <label className="addproperty__label" htmlFor="bathrooms">
             bathrooms:
             <input
               id="bathrooms"
@@ -60,7 +60,7 @@ const AddProperty = () => {
               placeholder="1-10"
             />
           </label>
-          <label htmlFor="price">
+          <label className="addproperty__label" htmlFor="price">
             price:
             <input
               id="price"
@@ -70,7 +70,7 @@ const AddProperty = () => {
               placeholder="0-2000000£"
             />
           </label>
-          <label htmlFor="email">
+          <label className="addproperty__label" htmlFor="email">
             email:
             <input
               id="email"
@@ -80,7 +80,7 @@ const AddProperty = () => {
               placeholder="johndoe@email.com"
             />
           </label>
-          <label htmlFor="city">
+          <label className="addproperty__label" htmlFor="city">
             city:
             <select
               id="city"
@@ -94,7 +94,7 @@ const AddProperty = () => {
               <option value="Liverpool">Liverpool</option>
             </select>
           </label>
-          <label htmlFor="type">
+          <label className="addproperty__label" htmlFor="type">
             type:
             <select
               id="type"

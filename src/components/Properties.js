@@ -37,7 +37,7 @@ const Properties = () => {
   return (
     <div>
       <h1>Properties</h1>
-      <SideBar properties={properties} />
+      <SideBar />
       <div className="properties-search">
         <input onChange={handleSearchInput} />
       </div>

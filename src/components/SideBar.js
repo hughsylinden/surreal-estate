@@ -1,17 +1,21 @@
-/* eslint-disable react/prop-types */
-import React from "react";
-import PropTypes from "prop-types";
-import { Link, useLocation } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useLocation, useHistory } from "react-router-dom";
 import qs from "qs";
 
-const SideBar = ({ properties }) => {
-  const buildQueryString = (operation, valueObj) => {
-    const { search } = useLocation();
+const SideBar = () => {
+  const [query, setQuery] = useState("");
+  const history = useHistory();
+  const { search } = useLocation();
 
+  const buildQueryString = (operation, valueObj) => {
     const currentQueryParams = qs.parse(search, { ignoreQueryPrefix: true });
+
     const newQueryParams = {
       ...currentQueryParams,
-      [operation]: JSON.stringify(valueObj),
+      [operation]: JSON.stringify({
+        ...JSON.parse(currentQueryParams[operation] || "{}"),
+        ...valueObj,
+      }),
     };
     return qs.stringify(newQueryParams, {
       addQueryPrefix: true,
@@ -19,12 +23,31 @@ const SideBar = ({ properties }) => {
     });
   };
 
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const newQueryString = buildQueryString("query", {
+      title: { $regex: query },
+    });
+    history.push(newQueryString);
+  };
+
   return (
     <div className="sidebar">
-      {properties.map((property) => (
+      <form onSubmit={handleSearch} className="search">
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => {
+            setQuery(e.target.value);
+          }}
+          placeholder="Search"
+        />
+        <button type="submit">search</button>
+      </form>
+      {["Manchester", "Sheffield", "Leeds", "Liverpool"].map((property) => (
         <div>
-          <Link to={buildQueryString("query", { city: property.city })}>
-            {property.city}
+          <Link to={buildQueryString("query", { city: property })}>
+            {property}
           </Link>
         </div>
       ))}
@@ -38,17 +61,4 @@ const SideBar = ({ properties }) => {
   );
 };
 
-SideBar.propTypes = {
-  properties: PropTypes.shape({
-    property: PropTypes.shape({
-      title: PropTypes.string,
-      city: PropTypes.string,
-      bedrooms: PropTypes.number,
-      bathrooms: PropTypes.number,
-      price: PropTypes.number,
-      email: PropTypes.string,
-      type: PropTypes.string,
-    }),
-  }).isRequired,
-};
 export default SideBar;
