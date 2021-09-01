@@ -1,8 +1,11 @@
-.properties{
+.property-map{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap; 
   
   margin: 10px;
   border: solid 1px red;
+}
+.properties{
+  display:flex
 }

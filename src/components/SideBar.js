@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation, useHistory } from "react-router-dom";
 import qs from "qs";
+import deleteProperties from "../requests/deleteProperties";
 
 const SideBar = () => {
   const [query, setQuery] = useState("");
@@ -57,6 +58,9 @@ const SideBar = () => {
       <div>
         <Link to={buildQueryString("sort", { price: 1 })}>price asc</Link>
       </div>
+      <button type="submit" onClick={deleteProperties}>
+        delete all
+      </button>
     </div>
   );
 };

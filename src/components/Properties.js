@@ -1,9 +1,7 @@
-/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import SideBar from "./SideBar";
 import showProperties from "../requests/showProperties";
-import deleteProperties from "../requests/deleteProperties";
 import Property from "./Property";
 import "../styles/Properties.css";
 import "../styles/Property.css";
@@ -14,7 +12,6 @@ const Properties = () => {
     properties: [],
   };
   const [properties, setProperties] = useState(initialState.properties);
-  const [searchInput, setSearchInput] = useState("");
   const [display, setDisplay] = useState(initialState.properties);
 
   useEffect(async () => {
@@ -26,35 +23,22 @@ const Properties = () => {
     searchProperties(search, setDisplay);
   }, [search]);
 
-  const handleSearchInput = (e) => {
-    const arr = properties.filter((property) =>
-      property.city.toLowerCase().includes(e.target.value.toLowerCase())
-    );
-    setSearchInput(e.target.value);
-    setDisplay(arr);
-  };
-
   return (
-    <div>
-      <h1>Properties</h1>
+    <div className="properties">
       <SideBar />
-      <div className="properties-search">
-        <input onChange={handleSearchInput} />
+      <div>
+        {properties.length > 0 && (
+          <div className="property-map">
+            {display.map((property) => {
+              return (
+                <div>
+                  <Property property={property} />
+                </div>
+              );
+            })}
+          </div>
+        )}
       </div>
-      {properties.length > 0 && (
-        <div className="properties">
-          {display.map((property) => {
-            return (
-              <div>
-                <Property property={property} />
-              </div>
-            );
-          })}
-        </div>
-      )}
-      <button type="submit" onClick={deleteProperties}>
-        delete all
-      </button>
     </div>
   );
 };
