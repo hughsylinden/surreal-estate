@@ -3,11 +3,14 @@
   flex-direction: column;
   margin: 10px;
   border: solid 1px black;
+  background-color: white;
 }
+
 .property-item{
   display: flex;
-  margin:5px;
+  padding:5px;
   align-items: center;
+  font-size: medium;
 }
 .image{
   height: 20px;
@@ -18,6 +21,25 @@
 .type{
   height: 15px;
 }
-.email{
+.email-logo{
   height: 15px;
+}
+
+.email{
+  background-color:#393D3F;
+  color:#F1E8B8;
+  padding: 10px;
+}
+
+.title{
+  justify-content: center;
+  font-size: large;
+  font-weight: 900;
+  margin: 20px;
+  border: solid 1px #393D3F;
+  background-color: #F1E8B8;
+}
+
+img{
+  padding-right: 5px;
 }

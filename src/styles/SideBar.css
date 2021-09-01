@@ -1,0 +1,39 @@
+.sidebar{
+  margin-right:10px;
+  padding:10px;
+}
+
+.sidebar_link{
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.sidebar_link > a {
+  text-decoration: none;
+  font-size: large;
+  color:white;
+}
+
+.sidebar_link > a:visited { 
+  font-size: large;
+  text-decoration: none;
+  color:white; 
+}
+.sidebar_link > a:hover { 
+  font-size: large;
+  text-decoration: none; 
+  background-color:#393D3F;
+  color:white
+}
+
+button{
+  background-color: #F1E8B8;
+  border: none;
+}
+
+input{
+  background-color: #F1E8B8;
+  border: none;
+  border-right:solid 1px black;
+}
+

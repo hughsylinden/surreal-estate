@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation, useHistory } from "react-router-dom";
 import qs from "qs";
-import deleteProperties from "../requests/deleteProperties";
+import "../styles/SideBar.css";
 
 const SideBar = () => {
   const [query, setQuery] = useState("");
@@ -46,21 +46,21 @@ const SideBar = () => {
         <button type="submit">search</button>
       </form>
       {["Manchester", "Sheffield", "Leeds", "Liverpool"].map((property) => (
-        <div>
+        <div className="sidebar_link">
           <Link to={buildQueryString("query", { city: property })}>
-            {property}
+            {property.toLowerCase()}
           </Link>
         </div>
       ))}
-      <div>
+      <div className="sidebar_link">
         <Link to={buildQueryString("sort", { price: -1 })}>price desc</Link>
       </div>
-      <div>
+      <div className="sidebar_link">
         <Link to={buildQueryString("sort", { price: 1 })}>price asc</Link>
       </div>
-      <button type="submit" onClick={deleteProperties}>
-        delete all
-      </button>
+      <Link to="/">
+        <button type="button">clear filter</button>
+      </Link>
     </div>
   );
 };

@@ -11,7 +11,7 @@ import type from "../styles/img/house.svg";
 const Property = ({ property }) => {
   return (
     <div className="property">
-      <div>{property.title}</div>
+      <div className="property-item title">{property.title}</div>
       <div className="property-item">
         <img className="image" alt="bedrooms" src={bed} />
         {property.bedrooms}
@@ -32,8 +32,8 @@ const Property = ({ property }) => {
         <img className="type" alt="type" src={type} />
         {property.type}
       </div>
-      <div className="property-item">
-        <img className="email" alt="email" src={email} />
+      <div className="property-item email">
+        <img className="email-logo" alt="email" src={email} />
         {property.email}
       </div>
     </div>

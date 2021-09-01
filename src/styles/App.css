@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,900&family=Rampart+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200&display=swap');
 .App {
-  font-family: 'Rampart One';
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: large;
 }

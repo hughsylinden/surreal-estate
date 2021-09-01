@@ -1,5 +1,9 @@
 .navbar{
-  border-bottom: solid;
+  border-color: #4D5057;
+  background-color: #F1E8B8;
+  padding-top:10px;
+  padding-bottom:10px;
+  border-bottom: solid 1px #393D3F;
 }
 
 .navbar-logo{
@@ -9,5 +13,9 @@
 .navbar-links-item{
   list-style: none;
   display: inline-block;
-  padding:10px;
+  padding-right: 20px;
+}
+
+.navbar-links{
+  margin:0;
 }
