@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation, useHistory } from "react-router-dom";
 import qs from "qs";
+import searchIcon from "../styles/img/search.svg";
 import "../styles/SideBar.css";
 
 const SideBar = () => {
@@ -43,7 +44,13 @@ const SideBar = () => {
           }}
           placeholder="Search"
         />
-        <button type="submit">search</button>
+        <button type="submit">
+          <img
+            src={searchIcon}
+            alt="searchIcon"
+            className="sidebar-submit__img"
+          />
+        </button>
       </form>
       {["Manchester", "Sheffield", "Leeds", "Liverpool"].map((property) => (
         <div className="sidebar_link">

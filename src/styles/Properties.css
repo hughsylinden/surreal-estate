@@ -1,15 +1,11 @@
 .properties {
   display: flex;
-  height: 90vh;
-  background-color: #F1E8B8;
+  background-color: #393D3F;
+  height:90%;
 }
 .property-map {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   padding-top: 10px;
-}
-
-.sidebar{
-  background-color: #393D3F;
 }

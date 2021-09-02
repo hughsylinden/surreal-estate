@@ -6,6 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 }
 
 code {
@@ -16,4 +17,6 @@ code {
 html{
   margin: 0 !important;
   padding: 0 !important;
+  height: 100%;
+  background-color: #393d3f;
 }

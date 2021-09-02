@@ -1,45 +1,53 @@
-.property{
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+.property {
   display: flex;
   flex-direction: column;
-  margin: 10px;
-  border: solid 1px black;
   background-color: white;
+  border-radius: 25px;
+  width:275px;
+  margin-top: 10px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 10px;
 }
 
-.property-item{
+.property-item {
   display: flex;
-  padding:5px;
+  padding: 5px;
   align-items: center;
   font-size: medium;
 }
-.image{
+.image {
   height: 20px;
 }
-.pound{
+.pound {
   height: 15px;
 }
-.type{
+.type {
   height: 15px;
 }
-.email-logo{
+.email-logo {
   height: 15px;
 }
 
-.email{
-  background-color:#393D3F;
-  color:#F1E8B8;
+.email {
   padding: 10px;
-}
-
-.title{
   justify-content: center;
   font-size: large;
-  font-weight: 900;
-  margin: 20px;
-  border: solid 1px #393D3F;
-  background-color: #F1E8B8;
 }
 
-img{
+.title {
+  font-family: "Anton", sans-serif;
+  font-size: large;
+  justify-content: center;
+  margin: 20px;
+  border: solid 1px #393d3f;
+  border-radius: 25px;
+  background-color: #f1e8b8;
+  color:#393d3f;
+}
+
+img {
   padding-right: 5px;
 }

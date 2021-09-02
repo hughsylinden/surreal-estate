@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
 .navbar{
+  font-family: 'Anton', sans-serif;
+  font-size: large;
+  letter-spacing: 1px;
   border-color: #4D5057;
-  background-color: #F1E8B8;
-  padding-top:10px;
-  padding-bottom:10px;
-  border-bottom: solid 1px #393D3F;
+  background-color: #525657;
+  height:10%;
+  display:flex;
+  align-items: center;
+  padding-left: 60px;
 }
 
 .navbar-logo{
@@ -18,4 +24,22 @@
 
 .navbar-links{
   margin:0;
+}
+
+.navbar-links-item > a {
+  text-decoration: none;
+  font-size: large;
+  color:white;
+}
+
+.navbar-links-item > a:visited { 
+  font-size: large;
+  text-decoration: none;
+  color:white; 
+}
+.navbar-links-item > a:hover { 
+  font-size: large;
+  text-decoration: none; 
+  background-color:#393D3F;
+  color:white
 }
