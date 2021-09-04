@@ -30,11 +30,7 @@ const Properties = () => {
         {properties.length > 0 && (
           <div className="property-map">
             {display.map((property) => {
-              return (
-                <div>
-                  <Property property={property} />
-                </div>
-              );
+              return <Property property={property} />;
             })}
           </div>
         )}

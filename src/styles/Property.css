@@ -18,17 +18,15 @@
   align-items: center;
   font-size: medium;
 }
-.image {
+
+.bedrooms__img, .bathrooms__img, .city__img{
   height: 20px;
+  padding-right: 5px;
 }
-.pound {
+
+.price__img, .type__img, .email__img {
   height: 15px;
-}
-.type {
-  height: 15px;
-}
-.email-logo {
-  height: 15px;
+  padding-right: 5px;
 }
 
 .email {
@@ -46,8 +44,4 @@
   border-radius: 25px;
   background-color: #f1e8b8;
   color:#393d3f;
-}
-
-img {
-  padding-right: 5px;
 }

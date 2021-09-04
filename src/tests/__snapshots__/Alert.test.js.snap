@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert renders alert component 1`] = `
+<DocumentFragment>
+  <div
+    class="success-message"
+  >
+    mockmessage
+  </div>
+</DocumentFragment>
+`;
