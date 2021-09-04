@@ -1,3 +1,5 @@
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable react/prop-types */
 import React from "react";
 import PropTypes from "prop-types";
 import "../styles/Property.css";
@@ -8,13 +10,13 @@ import city from "../styles/img/city.svg";
 import email from "../styles/img/email.svg";
 import type from "../styles/img/house.svg";
 
-const Property = ({ property }) => {
+const Property = ({ property, userId, onSaveProperty }) => {
   return (
     <div className="property">
       <div className="property-item title">{property.title}</div>
       <div className="property-item bedrooms">
         <img className="bedrooms__img" alt="bedrooms" src={bed} />
-        {property.bedrooms}
+        {Number(property.bedrooms)}
       </div>
       <div className="property-item bathrooms">
         <img className="bathrooms__img" alt="bathrooms" src={bathroom} />
@@ -36,6 +38,11 @@ const Property = ({ property }) => {
         <img className="email__img" alt="email" src={email} />
         {property.email}
       </div>
+      {userId && (
+        <button type="button" onClick={() => onSaveProperty(property._id)}>
+          save
+        </button>
+      )}
     </div>
   );
 };
@@ -44,11 +51,13 @@ Property.propTypes = {
   property: PropTypes.shape({
     title: PropTypes.string,
     city: PropTypes.string,
-    bedrooms: PropTypes.number,
-    bathrooms: PropTypes.number,
-    price: PropTypes.number,
+    bedrooms: PropTypes.string,
+    bathrooms: PropTypes.string,
+    price: PropTypes.string,
     email: PropTypes.string,
     type: PropTypes.string,
   }).isRequired,
+  userId: PropTypes.string.isRequired,
+  onSaveProperty: PropTypes.func.isRequired,
 };
 export default Property;

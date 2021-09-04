@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useLocation, useHistory } from "react-router-dom";
 import qs from "qs";
 import searchIcon from "../styles/img/search.svg";
+import deleteProperties from "../requests/deleteProperties";
 import "../styles/SideBar.css";
 
 const SideBar = () => {
@@ -52,7 +53,7 @@ const SideBar = () => {
         </button>
       </form>
       {["Manchester", "Sheffield", "Leeds", "Liverpool"].map((property) => (
-        <div className="sidebar_link">
+        <div key={property} className="sidebar_link">
           <Link to={buildQueryString("query", { city: property })}>
             {property.toLowerCase()}
           </Link>
@@ -67,6 +68,9 @@ const SideBar = () => {
       <Link to="/">
         <button type="button">clear filter</button>
       </Link>
+      <button type="button" onClick={deleteProperties}>
+        delete all
+      </button>
     </div>
   );
 };

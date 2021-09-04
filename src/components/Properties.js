@@ -1,5 +1,7 @@
+/* eslint-disable react/prop-types */
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import axios from "axios";
 import SideBar from "./SideBar";
 import showProperties from "../requests/showProperties";
 import Property from "./Property";
@@ -7,7 +9,7 @@ import "../styles/Properties.css";
 import "../styles/Property.css";
 import searchProperties from "../requests/searchProperties";
 
-const Properties = () => {
+const Properties = ({ userId }) => {
   const initialState = {
     properties: [],
   };
@@ -23,6 +25,20 @@ const Properties = () => {
     searchProperties(search, setDisplay);
   }, [search]);
 
+  const handleSaveProperty = async (propertyId) => {
+    const propertyObj = await axios.get(
+      `http://localhost:4000/api/v1/PropertyListing/${propertyId}`
+    );
+    await axios
+      .post(`http://localhost:4000/api/v1/Favourite`, propertyObj)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log({ error });
+      });
+  };
+
   return (
     <div className="properties">
       <SideBar />
@@ -30,7 +46,15 @@ const Properties = () => {
         {properties.length > 0 && (
           <div className="property-map">
             {display.map((property) => {
-              return <Property property={property} />;
+              return (
+                <div key={property.title}>
+                  <Property
+                    property={property}
+                    userId={userId}
+                    onSaveProperty={handleSaveProperty}
+                  />
+                </div>
+              );
             })}
           </div>
         )}

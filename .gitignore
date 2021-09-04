@@ -24,3 +24,4 @@ yarn-error.log*
 
 .eslintcache
 /surreal-estate-api
+/react-facebook-login
