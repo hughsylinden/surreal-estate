@@ -6,6 +6,7 @@
   letter-spacing: 1px;
   padding: 100px;
   background-color: #525657;
+  border-right: solid 5px #f1e8b8;
 }
 .search{
   display:flex;

@@ -6,10 +6,11 @@
   letter-spacing: 1px;
   border-color: #4D5057;
   background-color: #525657;
-  height:10%;
+  height:9%;
   display:flex;
   align-items: center;
   padding-left: 60px;
+  border-bottom: solid 5px #f1e8b8;
 }
 
 .navbar-logo{

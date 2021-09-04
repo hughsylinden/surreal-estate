@@ -42,7 +42,6 @@ const SideBar = () => {
           onChange={(e) => {
             setQuery(e.target.value);
           }}
-          placeholder="Search"
         />
         <button type="submit">
           <img
