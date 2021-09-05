@@ -1,12 +1,10 @@
 /* eslint-disable import/no-named-as-default */
 /* eslint-disable import/no-named-as-default-member */
-/* eslint-disable react/prop-types */
 import React from "react";
+import PropTypes from "prop-types";
 import "../styles/NavBar.css";
 import { Link } from "react-router-dom";
 import FacebookLogin from "../react-facebook-login/src/facebook";
-// import logo from "../styles/img/houselogo.svg";
-// <img src={logo} alt="logo" className="navbar-logo" />
 
 const NavBar = ({ userId, onLogin, onLogout }) => {
   return (
@@ -31,13 +29,19 @@ const NavBar = ({ userId, onLogin, onLogout }) => {
           callback={onLogin}
           render={(renderProps) => (
             <button type="submit" onClick={renderProps.onClick}>
-              This is my custom FB button
+              Login
             </button>
           )}
         />
       )}
     </div>
   );
+};
+
+NavBar.propTypes = {
+  userId: PropTypes.string.isRequired,
+  onLogin: PropTypes.func.isRequired,
+  onLogout: PropTypes.func.isRequired,
 };
 
 export default NavBar;

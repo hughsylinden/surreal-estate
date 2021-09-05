@@ -1,7 +1,7 @@
 import "../styles/AddProperty.css";
 import "../styles/Alert.css";
 import React, { useState } from "react";
-import getProperties from "../requests/getProperties";
+import addProperties from "../requests/addProperties";
 import Alert from "./Alert";
 
 const AddProperty = () => {
@@ -18,7 +18,7 @@ const AddProperty = () => {
 
   const handleAddProperty = (e) => {
     e.preventDefault();
-    getProperties(fields, setAlert);
+    addProperties(fields, setAlert);
   };
 
   const handleFieldChange = (e) => {

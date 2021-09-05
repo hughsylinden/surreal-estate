@@ -1,11 +1,11 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import { Link, useLocation, useHistory } from "react-router-dom";
 import qs from "qs";
 import searchIcon from "../styles/img/search.svg";
-import deleteProperties from "../requests/deleteProperties";
 import "../styles/SideBar.css";
 
-const SideBar = () => {
+const SideBar = ({ showFavourites }) => {
   const [query, setQuery] = useState("");
   const history = useHistory();
   const { search } = useLocation();
@@ -44,7 +44,7 @@ const SideBar = () => {
             setQuery(e.target.value);
           }}
         />
-        <button type="submit">
+        <button className="sidebar__button" type="submit">
           <img
             src={searchIcon}
             alt="searchIcon"
@@ -65,14 +65,29 @@ const SideBar = () => {
       <div className="sidebar_link">
         <Link to={buildQueryString("sort", { price: 1 })}>price asc</Link>
       </div>
+      <div className="sidebar_link">
+        <button id="sidebar__button" type="button" onClick={showFavourites}>
+          show favourites
+        </button>
+      </div>
+      <br />
       <Link to="/">
-        <button type="button">clear filter</button>
+        <button
+          className="sidebar__button"
+          type="button"
+          onClick={() => {
+            history.replace("/");
+          }}
+        >
+          clear filter
+        </button>
       </Link>
-      <button type="button" onClick={deleteProperties}>
-        delete all
-      </button>
     </div>
   );
+};
+
+SideBar.propTypes = {
+  showFavourites: PropTypes.func.isRequired,
 };
 
 export default SideBar;

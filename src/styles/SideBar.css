@@ -35,7 +35,7 @@
   color: white;
 }
 
-button {
+.sidebar__button  {
   background-color: #f1e8b8;
   border: none;
   height: 40px;
@@ -55,4 +55,15 @@ input {
   height: 40px;
 	padding: 0;
 	font: inherit;
+}
+#sidebar__button{
+  border:none;
+  background-color: #525657;
+  color: white;
+  font-size: large;
+  letter-spacing: 1px;
+  font-family: 'Anton', sans-serif;
+  padding:0;
+  padding-left:0;
+  padding-right:0;
 }
