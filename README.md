@@ -32,4 +32,4 @@ Properties will come from an API.
 
 ## Progress
 
-App is currrently currently as described. Remaining updates with regards to testing will be implemented.
+App is currrently currently working as described. Remaining updates with regards to testing will be implemented. More styling is also required.
