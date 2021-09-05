@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
@@ -53,7 +52,6 @@ const Properties = ({ userId }) => {
     const favourite = await axios.get(
       `http://localhost:4000/api/v1/Favourite/?query={"propertyListing":"${propertyId}"}`
     );
-    console.log(favourite.data[0]._id);
     await axios
       .delete(`http://localhost:4000/api/v1/Favourite/${favourite.data[0]._id}`)
       .then(() => {
