@@ -1,6 +1,6 @@
 # Surreal Estate Application
 
-This project is a three week project with the aim of creating a react app with simulates a property search engine similar to RightMove or Zoopla
+This project is a three week project with the aim of creating a react app which simulates a property search engine similar to RightMove or Zoopla
 
 ## Concepts
 
